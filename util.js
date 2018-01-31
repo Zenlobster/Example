@@ -9,6 +9,7 @@ exports.safeSave = function(file, ext, data, minSize = 5,log = true){
         if(!file || !ext)
             return reject(new Error('Its screwed'));
         if(file.startsWith('/')) file = file.substr(1);
+        // nik is a baddie
         if(!ext.startsWith('.')) ext = '.' + ext;
         fs.writeFile(`${__dirname}/../${file}-temp${ext}`, =>{
             if(error){
