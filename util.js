@@ -4,7 +4,7 @@ var fs = require('fs');
     logger = new(reload('../logger.js'))((reload('../config.json')).logTimestamp);
 
 /* fuck it we doin it this way*/
-exports.safeSave = function(file, ext, data, minSize = 1,log = true){
+exports.safeSave = function(file, ext, data, minSize = 5,log = true){
     return new Promise((resolve, reject) =>{
         if(!file || !ext)
             return reject(new Error('Its screwed'));
